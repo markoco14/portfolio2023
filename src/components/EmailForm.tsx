@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 
@@ -9,6 +10,7 @@ type Inputs = {
 
 
 export default function EmailForm() {
+  const [loading, setLoading] = useState<boolean>(false);
   const {
     reset,
     register,
@@ -17,6 +19,7 @@ export default function EmailForm() {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    setLoading(true)
     const response = await fetch('/api/sendMail', {
       method: 'POST',
       headers: {
@@ -34,6 +37,7 @@ export default function EmailForm() {
     }
 
     reset();
+    setLoading(false)
   }
 
   return (
@@ -62,7 +66,11 @@ export default function EmailForm() {
 				<textarea {...register("message", { required: true })} className='p-2 border bg-gray-100 shadow-inner'/>
 				{errors.message && <span className='rounded text-red-500'>Please include a message.</span>}
       </div>
-      <button className='bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-600 hover:to-pink-500 ease-in-out duration-200 shadow-lg rounded py-2'>Send</button>
+      <button 
+      className='bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-600 hover:to-pink-500 ease-in-out duration-200 shadow-lg rounded py-2'
+      >
+        {loading ? 'Sending...' : 'Send'}
+      </button>
     </form>
   )
 }
