@@ -187,7 +187,7 @@ export default function Home() {
 
       <section id="contact" className='bg-blue-900 text-blue-100 text-heavy'>
         <article className='min-h-1/2 max-w-[500px] mx-auto min-h-1/2 py-32 flex flex-col gap-16 px-2 sm:px-0'>
-          <h2 className='text-4xl'>Contact Me</h2>
+          <h2 className='text-5xl'>Contact Me</h2>
           <EmailForm />
         </article>
       </section>
