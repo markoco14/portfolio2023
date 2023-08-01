@@ -46,7 +46,7 @@ const Projects = ({
             }}
           >
             <h3
-              className={`text-3xl text-bold z-10 w-full text-white ${project.hoverTextColor} bg-black/70 hover:bg-black/10 rounded-xl py-2 px-2`}
+              className={`text-3xl text-bold z-10 w-full text-white ${project.hoverTextColor} bg-black/70 hover:bg-black/10 ease-in-out duration-200 rounded-xl py-2 px-2`}
             >
               {project.heading}
             </h3>
