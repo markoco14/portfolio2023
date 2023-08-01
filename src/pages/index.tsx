@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import EmailForm from "@/components/EmailForm";
 import { Dialog, Transition } from "@headlessui/react";
 import Image from "next/image";
@@ -239,13 +240,14 @@ export default function Home() {
       <nav className="z-10 text-white px-2 bg-black/50 flex justify-end items-center gap-4 w-full fixed top-0 left-0 h-[48px]">
         <Link href="#home">Home</Link>
         <Link href="#projects">Projects</Link>
+        <Link href="#about">About</Link>
         <Link href="#contact">Contact</Link>
       </nav>
       <section
         id="home"
         className="h-screen text-gray-100 bg-gradient-to-r from-blue-500 to-blue-600 sm:via-blue-600 sm:to-blue-500 grid place-items-center pt-[48px]"
       >
-        <article className="max-w-[800px] mx-auto min-h-screen py-32 flex flex-col gap-16 px-2 sm:px-0">
+        <article className="max-w-[800px] mx-auto min-h-screen py-24 flex flex-col gap-16 px-2 sm:px-0">
           <h1 className="text-4xl">
             Find problems. <br></br>Build solutions. <br></br>Live better.
           </h1>
@@ -261,6 +263,7 @@ export default function Home() {
         setIsShow={setIsShow}
         setCurrentProject={setCurrentProject}
       />
+      <About />
       <section
         id="contact"
         className="mix-h-screen text-blue-100 bg-gradient-to-r from-blue-500 to-blue-600 sm:via-blue-600 sm:to-blue-500"
