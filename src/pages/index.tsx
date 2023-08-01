@@ -71,7 +71,6 @@ const Project = ({currentProject, setIsShow, setCurrentProject}: {currentProject
     <Dialog
           onClose={() => {
             setIsShow(false);
-            setCurrentProject(undefined);
           }}
           className="z-10 fixed inset-0 flex items-center justify-center max-w-[600px] mx-auto p-2 py-8"
         >
@@ -133,7 +132,6 @@ const Project = ({currentProject, setIsShow, setCurrentProject}: {currentProject
                 type="button"
                 onClick={() => {
                   setIsShow(false);
-                  setCurrentProject(undefined);
                 }}
                 className="bg-gray-300 text-gray-900 hover:bg-gray-500 hover:text-white px-4 py-1 rounded w-full sm:w-fit"
               >
