@@ -24,6 +24,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "@types/mailgun-js": "^0.22.13",
     "mailgun-js": "^0.22.0"
   }
 }
