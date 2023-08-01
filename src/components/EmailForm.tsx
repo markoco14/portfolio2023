@@ -39,7 +39,7 @@ export default function EmailForm() {
   return (
     <form 
     onSubmit={handleSubmit(onSubmit)}
-		className='bg-white p-4 rounded-xl text-gray-900 flex flex-col gap-4'
+		className='bg-white p-4 rounded-xl text-gray-900 flex flex-col gap-4 shadow-inner'
     >
       <div className='flex flex-col gap-2'>
         <label>
@@ -62,7 +62,7 @@ export default function EmailForm() {
 				<textarea {...register("message", { required: true })} className='p-2 border bg-gray-100 shadow-inner'/>
 				{errors.message && <span className='rounded text-red-500'>Please include a message.</span>}
       </div>
-      <button className='bg-blue-500 rounded py-2'>Send</button>
+      <button className='bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-600 hover:to-pink-500 ease-in-out duration-200 shadow-lg rounded py-2'>Send</button>
     </form>
   )
 }
