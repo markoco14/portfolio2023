@@ -170,7 +170,7 @@ export default function Home() {
       </nav>
       <section 
         id="home"
-        className='h-screen bg-blue-600 text-gray-100 grid place-items-center pt-[48px]'
+        className='h-screen text-gray-100 bg-gradient-to-r from-blue-500 to-blue-600 sm:via-blue-600 sm:to-blue-500 grid place-items-center pt-[48px]'
       >
         <article className='max-w-[800px] mx-auto min-h-screen py-32 flex flex-col gap-16 px-2 sm:px-0'>
           <h1 className='text-4xl'>Find problems. <br></br>Build solutions. <br></br>Live better.</h1>
