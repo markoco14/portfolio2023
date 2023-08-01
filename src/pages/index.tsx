@@ -156,7 +156,7 @@ export default function Home() {
       heading: "Cram School Cloud",
       description:
         "A school management application that lets Taiwan's local English language schools manage their student data",
-      techStack: "Python (Django), NextJS, MySQL (Planet Scale), Tailwind",
+      techStack: "Python (Django), NextJS, MySQL (Planet Scale), Tailwind CSS",
       image: {
         src: "/images/csc1.png",
         alt: "Cram school cloud section image",
@@ -173,7 +173,7 @@ export default function Home() {
       heading: "Hao Hao Sound",
       description:
         " A sound library application that lets users listen to short sounds perfect for any situation.",
-      techStack: "NextJS, PostgreSQL (Supabase), Tailwind, LocalStorage",
+      techStack: "NextJS, PostgreSQL (Supabase), Tailwind CSS, LocalStorage",
       image: {
         src: "/images/hhs1.png",
         alt: "Hao Hao Sound hero section image",
