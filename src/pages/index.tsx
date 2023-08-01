@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 type Project = {
   color: string;
+  hoverTextColor: string;
   heading: string;
   description: string;
   techStack: string;
@@ -19,67 +20,33 @@ type Project = {
   siteLink: string;
 }
 
-const Project = ({ project, index }: { project: Project, index: number }) => {
+const Projects = ({ projects }: { projects: Project[] }) => {
 
   return (
-    <section className={`relative h-full sm:h-1/2 ${project.color}`}>
-      <article className='grid sm:grid-cols-2 max-w-[800px] mx-auto py-32 gap-16 px-2 sm:px-0'>
-        <div className={`flex flex-col gap-8 bg-white shadow-xl rounded-xl p-8 ${index % 2 === 0  ? '' : 'sm:col-start-2 sm:col-end-3 sm:row-start-1 sm:row-end-2'}`}>
-          <h2 className='text-2xl'>{project.heading}</h2>
-          <p>
-            {project.description}
-          </p>
-          <div>
-            {project.codeLink.frontend && (
-              <Link 
-                href={project.codeLink.frontend}
-                rel="noopener noreferrer"
-                target="_blank"
-                className='p-2 rounded'
-              >
-                Frontend
-              </Link>
-            )} 
-            {project.codeLink.backend && (
-              <Link 
-                href={project.codeLink.backend}
-                rel="noopener noreferrer"
-                target="_blank"
-                className='p-2 rounded'
-              >
-                Backend
-              </Link>
-            )}
-             {project.codeLink.fullstack && (
-              <Link 
-                href={project.codeLink.fullstack}
-                rel="noopener noreferrer"
-                target="_blank"
-                className='p-2 rounded'
-              >
-                Code
-              </Link>
-            )}
-            <Link 
-              href={project.siteLink}
-              rel="noopener noreferrer"
-              target="_blank"
-              className='p-2 rounded underline underline-offset-2 decoration-2'
-            >
-              Website
-            </Link>
-          </div>
-        </div>
-        <div className={`relative w-full aspect-square grid place-items-center rounded-xl shadow-xl`}>
-            <Image 
-              src={project.image.src}
-              alt={project.image.alt}
-              fill={true}
-              objectFit='cover'
-              className='rounded-xl'
-            />
-          </div>
-      </article>
+    <section id="projects" className='py-24 min-h-screen max-w-[800px] mx-auto'>
+      <h2 className="text-5xl text-bold mb-16">Projects</h2>
+      <div className='grid px-2 sm:grid-cols-2  md:grid-cols-3 gap-4'>
+      {projects.map((project: Project, index: number) => (
+        <article 
+          key={index} 
+          className='relative w-full aspect-square grid bg-black-50 rounded-xl hover:cursor-pointer'
+          onClick={() => {
+            console.log('learning more about:', project)
+          }}
+        >
+            <h3 className={`text-3xl text-bold z-10 w-full text-white ${project.hoverTextColor} bg-black/70 hover:bg-black/10 rounded-xl py-2 px-2`}>{project.heading}</h3>
+            <div className={`absolute w-full aspect-square`}>
+              <Image 
+                src={project.image.src}
+                alt={project.image.alt}
+                fill={true}
+                objectFit='cover'
+                className='rounded-xl'
+              />
+            </div>
+        </article>
+        ))}
+     </div>
     </section>
   );
 }
@@ -88,11 +55,12 @@ export default function Home() {
   const projects: Project[] = [
     {
       color: "",
+      hoverTextColor: "hover:text-black",
       heading: "Cram School Cloud",
       description: "A school management application that lets Taiwan's local English language schools manage their student data",
       techStack: "",
       image: {
-        src: "/images/cramschoolcloud/cramschool1.png",
+        src: "/images/csc1.png",
         alt: "Cram school cloud section image",
       },
       codeLink: {
@@ -103,11 +71,12 @@ export default function Home() {
     },
     {
       color: "bg-gray-500",
+      hoverTextColor: "text-white",
       heading: "Hao Hao Sound",
       description: " A sound library application that lets users listen to short sounds perfect for any situation.",
       techStack: "",
       image: {
-        src: "/images/haohaosound/haohao1.png",
+        src: "/images/hhs1.png",
         alt: "Hao Hao Sound hero section image",
       },
       codeLink: {
@@ -117,11 +86,12 @@ export default function Home() {
     },
     {
       color: "bg-green-500",
+      hoverTextColor: "hover:text-black",
       heading: "Expensave",
       description: "An expense tracket application that lets users track their income, budgets, and daily spending.",
       techStack: "",
       image: {
-        src: "/images/expensave/expensave1.png",
+        src: "/images/exp1.png",
         alt: "Expensave hero section image",
       },
       codeLink: {
@@ -131,11 +101,12 @@ export default function Home() {
     },
     {
       color: "",
+      hoverTextColor: "hover:text-black",
       heading: "Scriptt",
       description: "A dialogue writer application that lets English teachers create dialgoues for their English classes.",
       techStack: "",
       image: {
-        src: "/images/scriptt/scriptt2.png",
+        src: "/images/sdw1.png",
         alt: "Scriptt hero section image",
       },
       
@@ -146,11 +117,12 @@ export default function Home() {
     },
     {
       color: "bg-slate-700",
+      hoverTextColor: "hover:text-black",
       heading: "Taiwan Income Tax Calculator",
       description: "A tax calculator that lets foreigners check their taxes and income when they move to Taiwan.",
       techStack: "",
       image: {
-        src: "/images/tiss/tiss3.png",
+        src: "/images/tax1.png",
         alt: "Tiss hero section image",
       },
       codeLink: {
@@ -179,20 +151,18 @@ export default function Home() {
           </p>
         </article>
       </section>
-      <section id="projects">
-        {projects.map((project: Project, index: number) => (
-          <Project key={index} index={index} project={project}/>
-        ))}
-      </section>
-
-      <section id="contact" className=' text-blue-100 bg-gradient-to-r from-blue-500 to-blue-600 sm:via-blue-600 sm:to-blue-500'>
-        <article className='min-h-1/2 max-w-[500px] mx-auto min-h-1/2 py-32 flex flex-col gap-16 px-2 sm:px-0'>
+      <Projects projects={projects}/>
+      <section 
+        id="contact" 
+        className='mix-h-screen text-blue-100 bg-gradient-to-r from-blue-500 to-blue-600 sm:via-blue-600 sm:to-blue-500'
+      >
+        <article className='min-h-1/2 max-w-[500px] mx-auto min-h-screen py-24 flex flex-col gap-16 px-2 sm:px-0'>
           <h2 className='text-5xl font-bold'>Contact Me</h2>
           <EmailForm />
         </article>
       </section>
 
-      <footer>
+      <footer className='bg-blue-800 text-white min-h-[300px]'>
         <p>this is the footer</p>
       </footer>
     </main>
