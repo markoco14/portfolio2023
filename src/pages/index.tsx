@@ -15,6 +15,7 @@ type Project = {
     src: string;
     alt: string;
   };
+  logo: string;
   codeLink: {
     fullstack?: string;
     backend?: string;
@@ -33,32 +34,108 @@ const Projects = ({
   setCurrentProject: Function;
 }) => {
   return (
-    <section id="projects" className="px-2 sm:px-0 py-24 min-h-screen max-w-[800px] mx-auto">
+    <section id="projects" className="px-2 sm:px-0 py-24 min-h-screen max-w-[1000px] mx-auto">
       <h2 className="text-5xl text-bold mb-16">Projects</h2>
-      <div className="grid sm:grid-cols-2  md:grid-cols-3 gap-4">
+      <div className="relative grid sm:grid-cols-2 md:grid-cols-3 gap-4">
         {projects.map((project: Project, index: number) => (
           <article
             key={index}
-            className="relative w-full aspect-square grid bg-black-50 rounded-xl hover:cursor-pointer"
-            onClick={() => {
-              console.log("learning more about:", project);
-              setIsShow(true);
-              setCurrentProject(project);
-            }}
-          >
-            <h3
-              className={`text-3xl text-bold z-10 w-full text-white ${project.hoverTextColor} bg-black/70 hover:bg-black/10 ease-in-out duration-200 rounded-xl py-2 px-2`}
-            >
-              {project.heading}
-            </h3>
-            <div className={`absolute w-full aspect-square`}>
-              <Image
-                src={project.image.src}
-                alt={project.image.alt}
-                fill={true}
-                objectFit="cover"
-                className="rounded-xl"
-              />
+            className="relative aspect-square group ease-in-out duration-300"
+            // onClick={() => {
+            //   console.log("learning more about:", project);
+            //   setIsShow(true);
+            //   setCurrentProject(project);
+            // }}
+          > 
+            <div className="absolute top-0 left-0 w-full aspect-square group-hover:opacity-0 ease-in-out duration-300">
+              <div className="z-10 flex flex-col gap-2 justify-center items-center scale-90 group-hover:scale-100 ease-in-out duration-300 ">
+                <div>
+                  <Image
+                    src={project.logo}
+                    alt={project.image.alt}
+                    width={300}
+                    height={150}
+                    className="rounded-xl"
+                  />
+                </div>
+              </div>
+              <div className="z-1 opacity-20 absolute top-0 left-0 w-full aspect-square flex flex-col gap-2 justify-center items-center">
+                <div className={``}>
+                  <Image
+                    src={project.image.src}
+                    alt={project.image.alt}
+                    fill={true}
+                    objectFit="cover"
+                    className="rounded-xl"
+                  />
+                </div>
+              </div>
+              <div className="z-2 absolute top-0 left-0 w-full aspect-square opacity-50 bg-gradient-to-r from-[#172121] to-[#283a3a] rounded">
+              </div>
+            </div>
+            <div className="rounded z-1 p-4 bg-[#172121]/90 flex flex-col justify-evenly text-white absolute top-0 left-0 w-full aspect-square opacity-0 group-hover:opacity-100 ease-in-out duration-300">
+              {/* <h3>{project.heading}</h3> */}
+              <p>{project.description}</p>
+              <p>{project.techStack}</p>
+              <div className="flex justify-center gap-8">
+                {/* <button
+                  onClick={() => {
+                    console.log("learning more about:", project);
+                    setIsShow(true);
+                    setCurrentProject(project);
+                  }}
+                  className="hover:underline hover:underline-offset-4 ease-in-out duration-200"
+                >
+                  Learn More
+                </button> */}
+                {project?.codeLink.frontend && (
+                <Link 
+                  href={project?.codeLink.frontend}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className='p-2 rounded underline underline-offset-4 decoration-2 decoration-green-500 hover:bg-green-500 hover:decoration-white hover:text-white'
+                >
+                  Frontend
+                </Link>
+              )} 
+              {project?.codeLink.backend && (
+                <Link 
+                  href={project?.codeLink.backend}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className='p-2 rounded underline underline-offset-4 decoration-2 decoration-orange-500 hover:bg-orange-500 hover:decoration-white hover:text-white'
+                >
+                  Backend
+                </Link>
+              )}
+              {project?.codeLink.fullstack && (
+                <Link 
+                  href={project?.codeLink.fullstack}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className='p-2 rounded underline underline-offset-4 decoration-2 decoration-green-500 hover:bg-green-500 hover:decoration-white hover:text-white'
+                >
+                  Code
+                </Link>
+              )}
+              {project?.siteLink && (
+                <Link 
+                  href={project?.siteLink}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className='p-2 rounded bg-blue-500 hover:bg-blue-700 text-white'
+                >
+                  Website
+                </Link>
+              )}
+                {/* <Link 
+                  className="bg-blue-500 px-4 py-2"
+                  href={`${project.siteLink}`}
+                >
+                  Visit Site
+                </Link> */}
+              </div>
+
             </div>
           </article>
         ))}
@@ -162,6 +239,7 @@ export default function Home() {
         src: "/images/csc1.png",
         alt: "Cram school cloud section image",
       },
+      logo: '',
       codeLink: {
         frontend: "https://github.com/markoco14/frontend-school-mgmt",
         backend: "https://github.com/markoco14/student-mgmt",
@@ -179,6 +257,7 @@ export default function Home() {
         src: "/images/hhs1.png",
         alt: "Hao Hao Sound hero section image",
       },
+      logo: '',
       codeLink: {
         fullstack: "https://github.com/markoco14/haohaosound",
       },
@@ -192,9 +271,10 @@ export default function Home() {
         "An expense tracket application that lets users track their income, budgets, and daily spending.",
       techStack: "Heroku, PHP (Laravel), ReactJS, CSS",
       image: {
-        src: "/images/exp1.png",
+          src: "/images/expensave/Expensave2.png",
         alt: "Expensave hero section image",
       },
+      logo: '/images/expensave/Expensave3.png',
       codeLink: {
         fullstack: "https://github.com/markoco14/expense-tracker",
       },
@@ -211,6 +291,7 @@ export default function Home() {
         src: "/images/sdw1.png",
         alt: "Scriptt hero section image",
       },
+      logo: '',
 
       codeLink: {
         fullstack: "https://github.com/markoco14/dialogue-writer-app",
@@ -228,6 +309,7 @@ export default function Home() {
         src: "/images/tax1.png",
         alt: "Tiss hero section image",
       },
+      logo: '',
       codeLink: {
         fullstack: "https://github.com/markoco14/tiss",
       },
