@@ -325,20 +325,20 @@ export default function Home() {
       techStack: "ReactJS, CSS, LocalStorage",
       bgImage: {
         image: true,
-        src: "/images/expensave/Expensave2.png",
+        src: "/images/scriptt/scr3.png",
         alt: "Scriptt hero section image",
       },
       logo: {
-        src: '/images/expensave/Expensave3.png',
-        alt: 'The logo for Expensave'
+        src: '/images/scriptt/scr1.png',
+        alt: 'The logo for Scriptt'
       },
        styles: {
         gradient: true,
         direction: 'bg-gradient-to-r',
-        from: 'from-[#172121]',
-        to: 'to-[#283a3a]',
-        overlayOpacity: 'opacity-50',
-        descriptionBg: 'bg-[#002045]'
+        from: 'from-[#0e551d]',
+        to: 'to-[#147d2a]',
+        overlayOpacity: 'opacity-75',
+        descriptionBg: 'bg-[#147d2a]'
       },
       codeLink: {
         fullstack: "https://github.com/markoco14/dialogue-writer-app",
