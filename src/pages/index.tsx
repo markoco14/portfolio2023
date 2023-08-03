@@ -11,11 +11,24 @@ type Project = {
   heading: string;
   description: string;
   techStack: string;
-  image: {
+  bgImage: {
+    image: boolean;
     src: string;
     alt: string;
   };
-  logo: string;
+  logo: {
+    src: string;
+    alt: string;
+  };
+  styles: {
+    gradient: boolean;
+    direction?: string;
+    from?: string;
+    to?: string;
+    bg?: string;
+    overlayOpacity?: string;
+    descriptionBg?: string;
+  }
   codeLink: {
     fullstack?: string;
     backend?: string;
@@ -41,53 +54,40 @@ const Projects = ({
           <article
             key={index}
             className="relative aspect-square group ease-in-out duration-300"
-            // onClick={() => {
-            //   console.log("learning more about:", project);
-            //   setIsShow(true);
-            //   setCurrentProject(project);
-            // }}
           > 
             <div className="absolute top-0 left-0 w-full aspect-square group-hover:opacity-0 ease-in-out duration-300">
-              <div className="z-10 flex flex-col gap-2 justify-center items-center scale-90 group-hover:scale-100 ease-in-out duration-300 ">
-                <div>
+              <div className="z-1 absolute top-0 left-0 w-full aspect-square flex flex-col gap-2 justify-center items-center">
+                {/* LOGO */}
+                <div className="relative z-10 opacity-100 flex flex-col gap-2 justify-center items-center scale-90 group-hover:scale-100 ease-in-out duration-300 ">
                   <Image
-                    src={project.logo}
-                    alt={project.image.alt}
+                    src={project.logo.src}
+                    alt={project.logo.alt}
                     width={300}
                     height={150}
-                    className="rounded-xl"
+                    className="w-full rounded-xl"
                   />
                 </div>
-              </div>
-              <div className="z-1 opacity-20 absolute top-0 left-0 w-full aspect-square flex flex-col gap-2 justify-center items-center">
-                <div className={``}>
-                  <Image
-                    src={project.image.src}
-                    alt={project.image.alt}
-                    fill={true}
-                    objectFit="cover"
-                    className="rounded-xl"
-                  />
+                {/* BACKGROUND IMAGE */}
+                {project.bgImage.image && (
+                  <div className={`opacity-20`}>
+                    <Image
+                      src={project.bgImage.src}
+                      alt={project.bgImage.alt}
+                      fill={true}
+                      objectFit="cover"
+                      className="rounded-xl"
+                    />
+                  </div>
+                )}
+                {/* OVERLAY */}
+                <div className={`z-2 absolute top-0 left-0 w-full aspect-square ${project.styles.overlayOpacity} ${project.styles.gradient ? `${project.styles.direction} ${project.styles.from} ${project.styles.to}` : `${project.styles.bg}`} rounded`}>
                 </div>
-              </div>
-              <div className="z-2 absolute top-0 left-0 w-full aspect-square opacity-50 bg-gradient-to-r from-[#172121] to-[#283a3a] rounded">
               </div>
             </div>
-            <div className="rounded z-1 p-4 bg-[#172121]/90 flex flex-col justify-evenly text-white absolute top-0 left-0 w-full aspect-square opacity-0 group-hover:opacity-100 ease-in-out duration-300">
-              {/* <h3>{project.heading}</h3> */}
+            <div className={`rounded z-1 p-4 ${project.styles.descriptionBg} flex flex-col justify-evenly text-white absolute top-0 left-0 w-full aspect-square opacity-0 group-hover:opacity-100 ease-in-out duration-300`}>
               <p>{project.description}</p>
               <p>{project.techStack}</p>
               <div className="flex justify-center gap-8">
-                {/* <button
-                  onClick={() => {
-                    console.log("learning more about:", project);
-                    setIsShow(true);
-                    setCurrentProject(project);
-                  }}
-                  className="hover:underline hover:underline-offset-4 ease-in-out duration-200"
-                >
-                  Learn More
-                </button> */}
                 {project?.codeLink.frontend && (
                 <Link 
                   href={project?.codeLink.frontend}
@@ -234,12 +234,24 @@ export default function Home() {
       heading: "Cram School Cloud",
       description:
         "A school management application that lets Taiwan's local English language schools manage their student data",
-      techStack: "Python (Django), NextJS, MySQL (Planet Scale), Tailwind CSS",
-      image: {
-        src: "/images/csc1.png",
+      techStack: "AWS EC2, Python (Django), NextJS, MySQL (Planet Scale), Tailwind CSS",
+      bgImage: {
+        image: true,
+        src: "/images/expensave/Expensave2.png",
         alt: "Cram school cloud section image",
       },
-      logo: '',
+      logo: {
+        src: '/images/expensave/Expensave3.png',
+        alt: 'The logo for Expensave'
+      },
+       styles: {
+        gradient: true,
+        direction: 'bg-gradient-to-r',
+        from: 'from-[#172121]',
+        to: 'to-[#283a3a]',
+        overlayOpacity: 'opacity-50',
+        descriptionBg: 'bg-[#002045]'
+      },
       codeLink: {
         frontend: "https://github.com/markoco14/frontend-school-mgmt",
         backend: "https://github.com/markoco14/student-mgmt",
@@ -253,11 +265,23 @@ export default function Home() {
       description:
         " A sound library application that lets users listen to short sounds perfect for any situation.",
       techStack: "NextJS, PostgreSQL (Supabase), Tailwind CSS, LocalStorage",
-      image: {
-        src: "/images/hhs1.png",
+      bgImage: {
+        image: true,
+        src: "/images/expensave/Expensave2.png",
         alt: "Hao Hao Sound hero section image",
       },
-      logo: '',
+      logo: {
+        src: '/images/expensave/Expensave3.png',
+        alt: 'The logo for Expensave'
+      },
+       styles: {
+        gradient: true,
+        direction: 'bg-gradient-to-r',
+        from: 'from-[#172121]',
+        to: 'to-[#283a3a]',
+        overlayOpacity: 'opacity-50',
+        descriptionBg: 'bg-[#002045]'
+      },
       codeLink: {
         fullstack: "https://github.com/markoco14/haohaosound",
       },
@@ -270,11 +294,23 @@ export default function Home() {
       description:
         "An expense tracket application that lets users track their income, budgets, and daily spending.",
       techStack: "Heroku, PHP (Laravel), ReactJS, CSS",
-      image: {
-          src: "/images/expensave/Expensave2.png",
+      bgImage: {
+        image: true,
+        src: "/images/expensave/Expensave2.png",
         alt: "Expensave hero section image",
       },
-      logo: '/images/expensave/Expensave3.png',
+      logo: {
+        src: '/images/expensave/Expensave3.png',
+        alt: 'The logo for Expensave'
+      },
+      styles: {
+        gradient: true,
+        direction: 'bg-gradient-to-r',
+        from: 'from-[#172121]',
+        to: 'to-[#283a3a]',
+        overlayOpacity: 'opacity-50',
+        descriptionBg: 'bg-[#172121]'
+      },
       codeLink: {
         fullstack: "https://github.com/markoco14/expense-tracker",
       },
@@ -287,12 +323,23 @@ export default function Home() {
       description:
         "A dialogue writer application that lets English teachers create dialgoues for their English classes.",
       techStack: "ReactJS, CSS, LocalStorage",
-      image: {
-        src: "/images/sdw1.png",
+      bgImage: {
+        image: true,
+        src: "/images/expensave/Expensave2.png",
         alt: "Scriptt hero section image",
       },
-      logo: '',
-
+      logo: {
+        src: '/images/expensave/Expensave3.png',
+        alt: 'The logo for Expensave'
+      },
+       styles: {
+        gradient: true,
+        direction: 'bg-gradient-to-r',
+        from: 'from-[#172121]',
+        to: 'to-[#283a3a]',
+        overlayOpacity: 'opacity-50',
+        descriptionBg: 'bg-[#002045]'
+      },
       codeLink: {
         fullstack: "https://github.com/markoco14/dialogue-writer-app",
       },
@@ -305,11 +352,24 @@ export default function Home() {
       description:
         "A tax calculator that lets foreigners check their taxes and income when they move to Taiwan.",
       techStack: "HTML, CSS, JavaScript",
-      image: {
-        src: "/images/tax1.png",
+      bgImage: {
+        image: false,
+        src: "/images/expensave/Expensave2.png",
         alt: "Tiss hero section image",
       },
-      logo: '',
+      logo: {
+        src: '/images/tiss/tiss2.png',
+        alt: 'The logo for TISS Taiwan'
+      },
+       styles: {
+        gradient: false,
+        direction: 'bg-gradient-to-r',
+        from: 'from-[#172121]',
+        to: 'to-[#283a3a]',
+        bg: 'bg-[#002045]',
+        overlayOpacity: 'opacity-100',
+        descriptionBg: 'bg-[#002045]'
+      },
       codeLink: {
         fullstack: "https://github.com/markoco14/tiss",
       },
