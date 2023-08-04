@@ -193,7 +193,7 @@ export default function Projects() {
   return (
 		<section id="projects" className="px-2 sm:px-4 py-24 min-h-screen max-w-[1000px] mx-auto">
       <h2 className="text-5xl text-bold mb-16">Projects</h2>
-      <div className="relative grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="relative grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((project: Project, index: number) => (
           <article
             key={index}
@@ -229,8 +229,14 @@ export default function Projects() {
               </div>
             </div>
             <div className={`rounded z-1 p-4 ${project.styles.descriptionBg} flex flex-col justify-evenly text-white absolute top-0 left-0 w-full aspect-square opacity-0 group-hover:opacity-100 ease-in-out duration-300`}>
-              <p>{project.description}</p>
-              <p>{project.techStack}</p>
+              <div>
+                <p className="text-xl">Description</p>
+                <p>{project.description}</p>
+              </div>
+              <div>
+                <p className="text-xl">Tech Stack</p>
+                <p>{project.techStack}</p>
+              </div>
               
 								<div className="flex justify-center gap-8">
                 {project?.codeLink.frontend && (
