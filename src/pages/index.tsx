@@ -12,6 +12,7 @@ export default function Home() {
     <main>
       <Head>
         <title>Mark O&apos;Connor | Full-Stack Developer & Solutions Architect</title>
+        <script async src="https://kit.fontawesome.com/d0c81e3c08.js" crossOrigin="anonymous"></script>
       </Head>
       <Navbar />
       <Hero />
