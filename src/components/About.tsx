@@ -19,7 +19,7 @@ export default function About() {
 					</p>
 					<p className="text-lg">
 						On the Backend, I find joy in designing database schemas and improving API performance.
-						The server holds the magic that holds everything together.
+						The server is the magic that holds everything together.
 					</p>
 				</div>
 			</div>
