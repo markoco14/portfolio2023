@@ -67,7 +67,7 @@ export default function EmailForm() {
 				{errors.message && <span className='rounded text-red-500'>Please include a message.</span>}
       </div>
       <button 
-      className='bg-gradient-to-r from-pink-400 to-pink-500 hover:from-pink-600 hover:to-pink-500 ease-in-out duration-200 shadow-lg rounded py-2'
+      className='bg-gradient-to-r text-white from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-800 ease-in-out duration-200 shadow-lg rounded py-2'
       >
         {loading ? 'Sending...' : 'Send'}
       </button>
