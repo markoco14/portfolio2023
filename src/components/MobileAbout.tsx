@@ -5,12 +5,12 @@ export default function MobileAbout() {
  
   return (
 			<>
-				<div className="sm:hidden mb-4 flex justify-start gap-4">
+				<div className="sm:hidden mb-4 flex justify-evenly">
 					<button 
-					className={`${isFrontend ? 'underline underline-offset-2 decoration-2 decoration-blue-700' : ''}`}
+					className={`${isFrontend ? ' bg-blue-700 text-white' : ''} ease-in-out duration-100 w-full border-2 border-r-0 border-blue-700 rounded-l-md py-2`}
 					onClick={() => setIsFrontend(true)}>Frontend</button>
 					<button 
-					className={`${isFrontend ? '' : 'underline underline-offset-2 decoration-2 decoration-blue-700'}`}
+					className={`${isFrontend ? '' : ' bg-blue-700 text-white'} ease-in-out duration-100 w-full border-2 border-l-0 border-blue-700 rounded-r-md py-2`}
 					onClick={() => setIsFrontend(false)}>Backend</button>
 				</div>
 				{isFrontend ? (
