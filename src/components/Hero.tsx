@@ -12,7 +12,7 @@ export default function Hero() {
             <p className="text-3xl text-left mb-4">Mark O&apos;Connor</p>
             <p className="text-5xl font-bold mb-4">Full Stack Developer</p>
             <h1 className="text-2xl">
-              I find problems and build solutions that help others live better.
+              I build solutions to problems, inspired by helping others live better.
             </h1>
           </div>
           <div className="mx-auto">
