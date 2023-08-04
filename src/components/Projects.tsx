@@ -191,7 +191,7 @@ export default function Projects() {
   ];
  
   return (
-		<section id="projects" className="px-2 sm:px-0 py-24 min-h-screen max-w-[1000px] mx-auto">
+		<section id="projects" className="px-2 sm:px-4 py-24 min-h-screen max-w-[1000px] mx-auto">
       <h2 className="text-5xl text-bold mb-16">Projects</h2>
       <div className="relative grid sm:grid-cols-2 md:grid-cols-3 gap-4">
         {projects.map((project: Project, index: number) => (
