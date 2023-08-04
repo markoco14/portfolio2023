@@ -2,7 +2,7 @@ export default function LGAbout() {
 
 	return (
 		<>
-			<article className="hidden sm:flex flex-col sm:items-center mb-4 sm:mb-0">
+			<article className="border-r-2 hidden sm:flex sm:flex-col sm:items-center sm:mb-0 px-1">
 				<h3 className="text-blue-700 text-xl sm:text-center mb-2">
 					Frontend Developer
 				</h3>
@@ -22,7 +22,7 @@ export default function LGAbout() {
 					<li>Headless UI</li>
 				</ul>
 			</article>
-			<article className="hidden sm:flex flex-col sm:items-center mb-4 sm:mb-0">
+			<article className="hidden sm:flex flex-col sm:items-center mb-4 sm:mb-0 px-1">
 				<h3 className="text-blue-700 text-xl sm:text-center mb-2">
 					Backend Developer
 				</h3>

@@ -9,4 +9,6 @@
     font-family: Roboto, system-ui, sans-serif;
     scroll-behavior: smooth;
   }
+  p {
+  line-height:1.6;}
 }

@@ -9,7 +9,7 @@ export default function About() {
 				<div className="max-w-[600px] mb-24 flex flex-col gap-8 px-4 sm:px-0">
 					<p>Hi, I&apos;m Mark. Nice to meet you.</p>
 					<p>I&apos;ve been programming for more than 2.5 years. 
-						I&apos; passionate about both process and result. 
+						I&apos;m passionate about both process and result. 
 						I find pain-points in my jobs and daily experiences and set out to build solutions.
 						On the Frontend, I focus on functionality and creating a smooth, interactive user experience. 
 						On the Backend, I find joy in designing database schemas and improving API performance.
