@@ -17,7 +17,7 @@ export default function About() {
 				</div>
 			</div>
 			<div className="relative bg-white h-[60vh] px-4">
-				<div className="relative -top-[20vh] max-w-[800px] bg-white max-h-[80vh] border mx-auto sm:grid sm:grid-cols-2 p-4 rounded-xl shadow-lg">
+				<div className="relative -top-[20vh] max-w-[800px] bg-white min-h-[80vh] border mx-auto sm:grid sm:grid-cols-2 p-4 rounded-xl shadow-lg">
 					<MobileAbout />
 					<LGAbout />
 				</div>
