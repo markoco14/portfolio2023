@@ -9,10 +9,10 @@ export default function Hero() {
       >
         <article className="grid sm:grid-cols-2 items-center py-12 max-w-[800px] mx-auto min-h-screen px-2 sm:px-0">
           <div className="mb-8">
-            <p className="text-3xl text-left mb-4">Mark O&apos;Connor</p>
-            <p className="text-5xl font-bold mb-4">Full Stack Developer</p>
+            <p className="text-3xl text-left mb-2">Mark O&apos;Connor</p>
+            <p className="text-5xl font-bold mb-8">Full Stack Developer</p>
             <h1 className="text-2xl">
-              I build solutions to problems, inspired by helping others live better.
+              I build solutions to complex problems and I&apos;m inspired by helping people live better.
             </h1>
           </div>
           <div className="mx-auto">
