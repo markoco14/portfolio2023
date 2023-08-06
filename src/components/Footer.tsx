@@ -17,9 +17,9 @@ export default function Footer() {
 				<Link href="https://github.com/markoco14" target="_blank" rel="noreferrer noopener">
 					<i className="flex items-center overflow-auto fa-2xl w-full aspect-square p-4 rounded-full fa-brands fa-github hover:text-blue-800 hover:bg-white ease-in-out duration-200"></i>
 				</Link>
-				{/* <Link href="mailto:mark.oconnor14@gmail.com" target="_blank" rel="noreferrer noopener">
+				<Link href="mailto:mark.oconnor14@gmail.com" target="_blank" rel="noreferrer noopener">
 					<i className="flex items-center overflow-auto fa-2xl w-full aspect-square p-4 rounded-full fa-regular fa-envelope hover:text-blue-800 hover:bg-white ease-in-out duration-200"></i>
-				</Link> */}
+				</Link>
 			</div>
 			<p className="text-sm flex items-baseline gap-1">
 				<i className="fa-regular fa-copyright"></i> Mark O&apos;Connor 2023
