@@ -16,7 +16,7 @@ export default function Hero() {
     >
       <article
         className={`${
-          inView ? "opacity-100 translate-x-8" : "opacity-0 translate-x-0"
+          inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
         } duration-500 ease-in-out flex flex-col text-center gap-4 justify-center py-12 max-w-[800px] mx-auto min-h-screen px-2 sm:px-0`}
       >
         <div className="flex flex-col gap-2 mb-8">

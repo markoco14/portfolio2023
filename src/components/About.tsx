@@ -22,7 +22,7 @@ export default function About() {
       >
         <div
           className={`${
-            inView ? "opacity-100 translate-x-8" : "opacity-0 translate-x-0"
+            inView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
           } ease-in-out duration-500 max-w-[600px] mb-24 flex flex-col gap-8 px-4 sm:px-0`}
         >
           <p className="text-3xl">Hi, I&apos;m Mark. Nice to meet you.</p>
