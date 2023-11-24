@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { InView, useInView } from "react-intersection-observer";
 
 type Project = {
   color: string;
@@ -24,8 +25,8 @@ type Project = {
     bg?: string;
     overlayOpacity?: string;
     descriptionBg?: string;
-		buttonText: string;
-  }
+    buttonText: string;
+  };
   codeLink: {
     fullstack?: string;
     backend?: string;
@@ -220,103 +221,131 @@ const projects: Project[] = [
   },
 ];
 
-export default function Projects() {
-	
- 
+const options = {
+  threshold: 0.3,
+};
+
+const ProjectRenderer = ({ project }: { project: Project }) => {
+  const {
+    ref: projectRef,
+    inView: projectInView,
+    entry: projectEntry,
+  } = useInView(options);
   return (
-		<section id="projects" className="px-2 sm:px-4 py-24 min-h-screen max-w-[1000px] mx-auto">
+    <article
+      ref={projectRef}
+      className={` ${
+        projectInView ? "opacity-100" : "opacity-0"
+      } relative aspect-square group ease-in-out duration-500`}
+    >
+      <div className="absolute top-0 left-0 w-full aspect-square group-hover:opacity-0 ease-in-out duration-300">
+        <div className="z-1 absolute top-0 left-0 w-full aspect-square flex flex-col gap-2 justify-center items-center">
+          {/* LOGO */}
+          <div className="relative z-10 opacity-100 flex flex-col gap-2 justify-center items-center scale-90 group-hover:scale-100 ease-in-out duration-300 ">
+            {project.logo && (
+              <Image
+                src={project.logo.src}
+                alt={project.logo.alt}
+                width={300}
+                height={150}
+                className="w-full rounded-xl"
+              />
+            )}
+          </div>
+          {/* BACKGROUND IMAGE */}
+          {project.bgImage?.image && (
+            <div className={`opacity-20`}>
+              <Image
+                src={project.bgImage?.src}
+                alt={project.bgImage?.alt}
+                fill={true}
+                objectFit="cover"
+                className="rounded-xl"
+              />
+            </div>
+          )}
+          {/* OVERLAY */}
+          <div
+            className={`z-2 absolute top-0 left-0 w-full aspect-square ${
+              project.styles.overlayOpacity
+            } ${
+              project.styles.gradient
+                ? `${project.styles.direction} ${project.styles.from} ${project.styles.to}`
+                : `${project.styles.bg}`
+            } rounded`}
+          ></div>
+        </div>
+      </div>
+      <div
+        className={`rounded z-1 p-4 ${project.styles.descriptionBg} flex flex-col justify-evenly text-white absolute top-0 left-0 w-full aspect-square opacity-0 group-hover:opacity-100 ease-in-out duration-300`}
+      >
+        <div>
+          <p className="text-xl">Description</p>
+          <p>{project.description}</p>
+        </div>
+        <div>
+          <p className="text-xl">Tech Stack</p>
+          <p>{project.techStack}</p>
+        </div>
+
+        <div className="flex justify-center gap-8">
+          {project?.codeLink.frontend && (
+            <Link
+              href={project?.codeLink.frontend}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="p-1 rounded underline underline-offset-4 decoration-2 decoration-white hover:scale-110 text-white ease-in-out duration-200"
+            >
+              Frontend
+            </Link>
+          )}
+          {project?.codeLink.backend && (
+            <Link
+              href={project?.codeLink.backend}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="p-1 rounded underline underline-offset-4 decoration-2 decoration-white hover:scale-110 text-white ease-in-out duration-200"
+            >
+              Backend
+            </Link>
+          )}
+          {project?.codeLink.fullstack && (
+            <Link
+              href={project?.codeLink.fullstack}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="p-1 rounded underline underline-offset-4 decoration-2 decoration-white hover:scale-110 text-white ease-in-out duration-200"
+            >
+              Code
+            </Link>
+          )}
+          {project?.siteLink && (
+            <Link
+              href={project?.siteLink}
+              rel="noopener noreferrer"
+              target="_blank"
+              className={`rounded bg-white ${project.styles.buttonText} p-1 hover:scale-110 ease-in-out duration-200`}
+            >
+              Website
+            </Link>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+};
+
+export default function Projects() {
+  
+  return (
+    <section
+      id="projects"
+      className="px-2 sm:px-4 py-24 min-h-screen max-w-[1000px] mx-auto"
+    >
       <h2 className="text-5xl text-bold mb-16">Projects</h2>
       <div className="relative grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((project: Project, index: number) => (
-          <article
-            key={index}
-            className="relative aspect-square group ease-in-out duration-300"
-          > 
-            <div className="absolute top-0 left-0 w-full aspect-square group-hover:opacity-0 ease-in-out duration-300">
-              <div className="z-1 absolute top-0 left-0 w-full aspect-square flex flex-col gap-2 justify-center items-center">
-                {/* LOGO */}
-                <div className="relative z-10 opacity-100 flex flex-col gap-2 justify-center items-center scale-90 group-hover:scale-100 ease-in-out duration-300 ">
-                  {project.logo && (
-                    <Image
-                      src={project.logo.src}
-                      alt={project.logo.alt}
-                      width={300}
-                      height={150}
-                      className="w-full rounded-xl"
-                    />
-                  )}
-                </div>
-                {/* BACKGROUND IMAGE */}
-                {project.bgImage?.image && (
-                  <div className={`opacity-20`}>
-                    <Image
-                      src={project.bgImage?.src}
-                      alt={project.bgImage?.alt}
-                      fill={true}
-                      objectFit="cover"
-                      className="rounded-xl"
-                    />
-                  </div>
-                )}
-                {/* OVERLAY */}
-                <div className={`z-2 absolute top-0 left-0 w-full aspect-square ${project.styles.overlayOpacity} ${project.styles.gradient ? `${project.styles.direction} ${project.styles.from} ${project.styles.to}` : `${project.styles.bg}`} rounded`}>
-                </div>
-              </div>
-            </div>
-            <div className={`rounded z-1 p-4 ${project.styles.descriptionBg} flex flex-col justify-evenly text-white absolute top-0 left-0 w-full aspect-square opacity-0 group-hover:opacity-100 ease-in-out duration-300`}>
-              <div>
-                <p className="text-xl">Description</p>
-                <p>{project.description}</p>
-              </div>
-              <div>
-                <p className="text-xl">Tech Stack</p>
-                <p>{project.techStack}</p>
-              </div>
-              
-								<div className="flex justify-center gap-8">
-                {project?.codeLink.frontend && (
-									<Link 
-										href={project?.codeLink.frontend}
-										rel="noopener noreferrer"
-										target="_blank"
-										className='p-1 rounded underline underline-offset-4 decoration-2 decoration-white hover:scale-110 text-white ease-in-out duration-200'
-									>
-										Frontend
-									</Link>
-								)} 
-								{project?.codeLink.backend && (
-									<Link 
-										href={project?.codeLink.backend}
-										rel="noopener noreferrer"
-										target="_blank"
-										className='p-1 rounded underline underline-offset-4 decoration-2 decoration-white hover:scale-110 text-white ease-in-out duration-200'
-									>
-										Backend
-									</Link>
-								)}
-								{project?.codeLink.fullstack && (
-									<Link 
-										href={project?.codeLink.fullstack}
-										rel="noopener noreferrer"
-										target="_blank"
-										className='p-1 rounded underline underline-offset-4 decoration-2 decoration-white hover:scale-110 text-white ease-in-out duration-200'
-									>
-										Code
-									</Link>
-								)}
-								{project?.siteLink && (
-									<Link 
-										href={project?.siteLink}
-										rel="noopener noreferrer"
-										target="_blank"
-										className={`rounded bg-white ${project.styles.buttonText} p-1 hover:scale-110 ease-in-out duration-200`}
-									>
-										Website
-									</Link>
-								)}
-								</div>
-              </div>
-          </article>
+          <ProjectRenderer key={index} project={project} />
         ))}
       </div>
     </section>
