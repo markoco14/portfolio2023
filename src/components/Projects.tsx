@@ -7,12 +7,12 @@ type Project = {
   heading: string;
   description: string;
   techStack: string;
-  bgImage: {
+  bgImage?: {
     image: boolean;
     src: string;
     alt: string;
   };
-  logo: {
+  logo?: {
     src: string;
     alt: string;
   };
@@ -39,27 +39,58 @@ export default function Projects() {
     {
       color: "",
       hoverTextColor: "hover:text-black",
+      heading: "Next Fast Auth",
+      description: "Frontend and Backend start kits for new applications.",
+      techStack: "FastAPI (Python), NextJs",
+      // bgImage: {
+      //   image: true,
+      //   src: "/images/csc/csc4.png",
+      //   alt: "Cram school cloud section image",
+      // },
+      logo: {
+        src: "/images/nfa/FastNextAuth.png",
+        alt: "The logo for Next Fast Auth",
+      },
+      styles: {
+        gradient: true,
+        direction: "bg-gradient-to-b",
+        from: "from-amber-200",
+        to: "to-amber-100",
+        overlayOpacity: "opacity-60",
+        descriptionBg: "bg-amber-900",
+        buttonText: "text-amber-900",
+      },
+      codeLink: {
+        frontend: "https://github.com/markoco14/fast-auth-client",
+        backend: "https://github.com/markoco14/fast-auth-api",
+      },
+      siteLink: "https://www.cramschoolcloud.com/",
+    },
+    {
+      color: "",
+      hoverTextColor: "hover:text-black",
       heading: "Cram School Cloud",
       description:
         "A school management application that lets Taiwan's local English language schools manage their student data",
-      techStack: "AWS EC2, Python (Django), NextJS, MySQL (Planet Scale), Tailwind CSS",
+      techStack:
+        "AWS EC2, Python (Django), NextJS, MySQL (Planet Scale), Tailwind CSS",
       bgImage: {
         image: true,
         src: "/images/csc/csc4.png",
         alt: "Cram school cloud section image",
       },
       logo: {
-        src: '/images/csc/csc3.png',
-        alt: 'The logo for Cram School Cloud'
+        src: "/images/csc/csc3.png",
+        alt: "The logo for Cram School Cloud",
       },
-       styles: {
+      styles: {
         gradient: true,
-        direction: 'bg-gradient-to-r',
-        from: 'from-[#035dce]',
-        to: 'to-[#046df0]',
-        overlayOpacity: 'opacity-60',
-        descriptionBg: 'bg-[#03469c]',
-				buttonText: 'text-[#03469c]'
+        direction: "bg-gradient-to-r",
+        from: "from-[#035dce]",
+        to: "to-[#046df0]",
+        overlayOpacity: "opacity-60",
+        descriptionBg: "bg-[#03469c]",
+        buttonText: "text-[#03469c]",
       },
       codeLink: {
         frontend: "https://github.com/markoco14/frontend-school-mgmt",
@@ -80,17 +111,17 @@ export default function Projects() {
         alt: "Hao Hao Sound hero section image",
       },
       logo: {
-        src: '/images/hhs/hhs1.png',
-        alt: 'The logo for Hao Hao Sound'
+        src: "/images/hhs/hhs1.png",
+        alt: "The logo for Hao Hao Sound",
       },
-       styles: {
+      styles: {
         gradient: true,
-        direction: 'bg-gradient-to-r',
-        from: 'from-[#ad1962]',
-        to: 'to-[#bf1b6c]',
-        overlayOpacity: 'opacity-60',
-        descriptionBg: 'bg-[#bf1b6c]',
-				buttonText: 'text-[#bf1b6c]'
+        direction: "bg-gradient-to-r",
+        from: "from-[#ad1962]",
+        to: "to-[#bf1b6c]",
+        overlayOpacity: "opacity-60",
+        descriptionBg: "bg-[#bf1b6c]",
+        buttonText: "text-[#bf1b6c]",
       },
       codeLink: {
         fullstack: "https://github.com/markoco14/haohaosound",
@@ -110,17 +141,17 @@ export default function Projects() {
         alt: "Expensave hero section image",
       },
       logo: {
-        src: '/images/expensave/exp1.png',
-        alt: 'The logo for Expensave'
+        src: "/images/expensave/exp1.png",
+        alt: "The logo for Expensave",
       },
       styles: {
         gradient: true,
-        direction: 'bg-gradient-to-r',
-        from: 'from-[#1C7436]',
-        to: 'to-[#F4BC33]',
-        overlayOpacity: 'opacity-70',
-        descriptionBg: 'bg-[#1C7436]',
-				buttonText: 'text-[#1C7436]'
+        direction: "bg-gradient-to-r",
+        from: "from-[#1C7436]",
+        to: "to-[#F4BC33]",
+        overlayOpacity: "opacity-70",
+        descriptionBg: "bg-[#1C7436]",
+        buttonText: "text-[#1C7436]",
       },
       codeLink: {
         fullstack: "https://github.com/markoco14/expense-tracker",
@@ -140,17 +171,17 @@ export default function Projects() {
         alt: "Scriptt hero section image",
       },
       logo: {
-        src: '/images/scriptt/scr1.png',
-        alt: 'The logo for Scriptt'
+        src: "/images/scriptt/scr1.png",
+        alt: "The logo for Scriptt",
       },
-       styles: {
+      styles: {
         gradient: true,
-        direction: 'bg-gradient-to-r',
-        from: 'from-[#0e551d]',
-        to: 'to-[#147d2a]',
-        overlayOpacity: 'opacity-60',
-        descriptionBg: 'bg-[#1ba939]',
-				buttonText: 'text-[#1ba939]'
+        direction: "bg-gradient-to-r",
+        from: "from-[#0e551d]",
+        to: "to-[#147d2a]",
+        overlayOpacity: "opacity-60",
+        descriptionBg: "bg-[#1ba939]",
+        buttonText: "text-[#1ba939]",
       },
       codeLink: {
         fullstack: "https://github.com/markoco14/dialogue-writer-app",
@@ -164,24 +195,24 @@ export default function Projects() {
       description:
         "A tax calculator that lets foreigners check their taxes and income when they move to Taiwan.",
       techStack: "HTML, CSS, JavaScript",
-      bgImage: {
-        image: false,
-        src: "/images/expensave/Expensave2.png",
-        alt: "Tiss hero section image",
-      },
+      // bgImage: {
+      //   image: false,
+      //   src: "/images/expensave/Expensave2.png",
+      //   alt: "Tiss hero section image",
+      // },
       logo: {
-        src: '/images/tiss/tiss2.png',
-        alt: 'The logo for Taiwan Tax and Info Super Simple.'
+        src: "/images/tiss/tiss2.png",
+        alt: "The logo for Taiwan Tax and Info Super Simple.",
       },
-       styles: {
+      styles: {
         gradient: false,
-        direction: 'bg-gradient-to-r',
-        from: 'from-[#172121]',
-        to: 'to-[#283a3a]',
-        bg: 'bg-[#002045]',
-        overlayOpacity: 'opacity-100',
-        descriptionBg: 'bg-[#002045]',
-				buttonText: 'text-[#002045]'
+        direction: "bg-gradient-to-r",
+        from: "from-[#172121]",
+        to: "to-[#283a3a]",
+        bg: "bg-[#002045]",
+        overlayOpacity: "opacity-100",
+        descriptionBg: "bg-[#002045]",
+        buttonText: "text-[#002045]",
       },
       codeLink: {
         fullstack: "https://github.com/markoco14/tiss",
@@ -203,20 +234,22 @@ export default function Projects() {
               <div className="z-1 absolute top-0 left-0 w-full aspect-square flex flex-col gap-2 justify-center items-center">
                 {/* LOGO */}
                 <div className="relative z-10 opacity-100 flex flex-col gap-2 justify-center items-center scale-90 group-hover:scale-100 ease-in-out duration-300 ">
-                  <Image
-                    src={project.logo.src}
-                    alt={project.logo.alt}
-                    width={300}
-                    height={150}
-                    className="w-full rounded-xl"
-                  />
+                  {project.logo && (
+                    <Image
+                      src={project.logo.src}
+                      alt={project.logo.alt}
+                      width={300}
+                      height={150}
+                      className="w-full rounded-xl"
+                    />
+                  )}
                 </div>
                 {/* BACKGROUND IMAGE */}
-                {project.bgImage.image && (
+                {project.bgImage?.image && (
                   <div className={`opacity-20`}>
                     <Image
-                      src={project.bgImage.src}
-                      alt={project.bgImage.alt}
+                      src={project.bgImage?.src}
+                      alt={project.bgImage?.alt}
                       fill={true}
                       objectFit="cover"
                       className="rounded-xl"
