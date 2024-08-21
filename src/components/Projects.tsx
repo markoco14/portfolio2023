@@ -37,6 +37,36 @@ type Project = {
 
 const projects: Project[] = [
   {
+    color: "bg-green-500",
+    hoverTextColor: "hover:text-black",
+    heading: "Expensave",
+    description:
+      "An expense tracket application that lets users track their income, budgets, and daily spending.",
+    techStack: "Python (FastAPI), Jinja Templates, HTMX, Tailwind CSS",
+    bgImage: {
+      image: true,
+      src: "/images/expensave/Expensave2.png",
+      alt: "Expensave hero section image",
+    },
+    logo: {
+      src: "/images/savemoneylife/save-money.png",
+      alt: "The logo for My Save Money Life",
+    },
+    styles: {
+      gradient: true,
+      direction: "bg-gradient-to-r",
+      from: "from-[#1C7436]",
+      to: "to-[#F4BC33]",
+      overlayOpacity: "opacity-70",
+      descriptionBg: "bg-[#1C7436]",
+      buttonText: "text-[#1C7436]",
+    },
+    codeLink: {
+      fullstack: "https://github.com/markoco14/expensave-rebuild",
+    },
+    siteLink: "https://mysavemoneylife.com",
+  },
+  {
     color: "",
     hoverTextColor: "hover:text-black",
     heading: "Next Fast Auth",
@@ -127,36 +157,6 @@ const projects: Project[] = [
       fullstack: "https://github.com/markoco14/haohaosound",
     },
     siteLink: "https://www.haohaosound.com/",
-  },
-  {
-    color: "bg-green-500",
-    hoverTextColor: "hover:text-black",
-    heading: "Expensave",
-    description:
-      "An expense tracket application that lets users track their income, budgets, and daily spending.",
-    techStack: "Heroku, PHP (Laravel), ReactJS, CSS",
-    bgImage: {
-      image: true,
-      src: "/images/expensave/Expensave2.png",
-      alt: "Expensave hero section image",
-    },
-    logo: {
-      src: "/images/expensave/exp1.png",
-      alt: "The logo for Expensave",
-    },
-    styles: {
-      gradient: true,
-      direction: "bg-gradient-to-r",
-      from: "from-[#1C7436]",
-      to: "to-[#F4BC33]",
-      overlayOpacity: "opacity-70",
-      descriptionBg: "bg-[#1C7436]",
-      buttonText: "text-[#1C7436]",
-    },
-    codeLink: {
-      fullstack: "https://github.com/markoco14/expense-tracker",
-    },
-    siteLink: "https://mymoneybags.herokuapp.com/",
   },
   {
     color: "",
