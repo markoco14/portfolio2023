@@ -32,7 +32,7 @@ type Project = {
     backend?: string;
     frontend?: string;
   };
-  siteLink: string;
+  siteLink?: string;
 };
 
 const projects: Project[] = [
@@ -93,8 +93,7 @@ const projects: Project[] = [
     codeLink: {
       frontend: "https://github.com/markoco14/fast-auth-client",
       backend: "https://github.com/markoco14/fast-auth-api",
-    },
-    siteLink: "https://www.cramschoolcloud.com/",
+    }
   },
   {
     color: "",
