@@ -37,12 +37,42 @@ type Project = {
 
 const projects: Project[] = [
   {
+    color: "bg-pink-500",
+    hoverTextColor: "hover:text-black",
+    heading: "Expensave",
+    description:
+      "An calendar sharing app for couples with ever-changing shift schedules.",
+    techStack: "FastAPI, HTMX, Tailwind",
+    bgImage: {
+      image: true,
+      src: "/images/etime/etime-bg-1.jpeg",
+      alt: "Ennytime background image",
+    },
+    logo: {
+      src: "/images/etime/etime-logo-text.png",
+      alt: "The logo for Ennytime",
+    },
+    styles: {
+      gradient: true,
+      direction: "bg-gradient-to-r",
+      from: "from-pink-500",
+      to: "to-pink-400",
+      overlayOpacity: "opacity-70",
+      descriptionBg: "bg-pink-500",
+      buttonText: "text-pink-900",
+    },
+    codeLink: {
+      fullstack: "https://github.com/markoco14/ennytime",
+    },
+    siteLink: "https://ennytime.com",
+  },
+  {
     color: "bg-green-500",
     hoverTextColor: "hover:text-black",
     heading: "Expensave",
     description:
       "An expense tracket application that lets users track their income, budgets, and daily spending.",
-    techStack: "Python (FastAPI), Jinja Templates, HTMX, Tailwind CSS",
+    techStack: "FastAPI, HTMX, Tailwind",
     bgImage: {
       image: true,
       src: "/images/expensave/Expensave2.png",
@@ -71,12 +101,7 @@ const projects: Project[] = [
     hoverTextColor: "hover:text-black",
     heading: "Next Fast Auth",
     description: "Frontend and Backend start kits for new applications.",
-    techStack: "FastAPI (Python), NextJs",
-    // bgImage: {
-    //   image: true,
-    //   src: "/images/csc/csc4.png",
-    //   alt: "Cram school cloud section image",
-    // },
+    techStack: "FastAPI, NextJs",
     logo: {
       src: "/images/nfa/FastNextAuth.png",
       alt: "The logo for Next Fast Auth",
@@ -102,7 +127,7 @@ const projects: Project[] = [
     description:
       "A school management application that lets Taiwan's local English language schools manage their student data",
     techStack:
-      "AWS EC2, Python (Django), NextJS, MySQL (Planet Scale), Tailwind CSS",
+      "Django, NextJS, MySQL, Tailwind",
     bgImage: {
       image: true,
       src: "/images/csc/csc4.png",
@@ -133,7 +158,7 @@ const projects: Project[] = [
     heading: "Hao Hao Sound",
     description:
       " A sound library application that lets users listen to short sounds perfect for any situation.",
-    techStack: "NextJS, PostgreSQL (Supabase), Tailwind CSS, LocalStorage",
+    techStack: "NextJS, PostgreSQL, Tailwind, LocalStorage",
     bgImage: {
       image: true,
       src: "/images/hhs/hhs2.png",
