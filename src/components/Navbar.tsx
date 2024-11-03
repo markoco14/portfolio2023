@@ -22,7 +22,6 @@ export default function About() {
                 <Link href="#home" onClick={() => setIsOpen(false)}>Home</Link>
                 <Link href="#about" onClick={() => setIsOpen(false)}>About</Link>
                 <Link href="#projects" onClick={() => setIsOpen(false)}>Projects</Link>
-                <Link href="#contact" onClick={() => setIsOpen(false)}>Contact</Link>
                 <i 
                   className="fa-solid fa-xmark mt-8"
                   onClick={() => setIsOpen(false)}
@@ -34,7 +33,6 @@ export default function About() {
             <Link href="#home">Home</Link>
             <Link href="#about">About</Link>
             <Link href="#projects">Projects</Link>
-            <Link href="#contact">Contact</Link>
           </div>
         </div>
       </nav>
