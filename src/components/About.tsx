@@ -28,19 +28,15 @@ export default function About() {
           <p className="text-3xl">Hi, I&apos;m Mark. Nice to meet you.</p>
           <p className="text-lg">
             I was drawn to programming by dreams of the things I could create.
-            I&apos;m passionate about turning ideas into reality. I love writing
-            clean code but the real joy is creating beautiful products that
+            I&apos;m passionate about turning ideas into reality and I love writing
+            code, but the real joy is creating products that
             people love using.
           </p>
           <p className="text-lg">
-            On the Frontend, I focus on functionality and creating a smooth,
-            interactive user experience. The user interface brings the senses to
-            life.
+            On the Frontend, I focus on the simplest set of features to solve the problem. Then I make it easy to understand and feel good to use. The Frontend brings the senses to life.
           </p>
           <p className="text-lg">
-            On the Backend, I find joy in designing database schemas and
-            improving API performance. The server is the magic that holds
-            everything together.
+            On the Backend, I focus on basic web fundamentals and the best tools to get the job done. I build what is needed to work with the data required by the app. The Backend is the magic that drives application state.
           </p>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Contact from "@/components/Contact";
+import ESL from "@/components/ESL";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
@@ -21,6 +22,7 @@ export default function Home() {
       <Hero />
       <About />
       <Projects />
+      <ESL />
       <Footer />
     </main>
   );
