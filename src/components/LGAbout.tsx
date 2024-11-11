@@ -7,7 +7,6 @@ export default function LGAbout() {
 					<h3 className="text-blue-700 text-xl sm:text-center mb-2">
 						Frontend Developer
 					</h3>
-					<p className="sm:text-center">I like to make complex interactions look and feel simple.</p>
 				</div>
 				<div className="mb-4 text-center">
 					<h4 className="text-blue-700 mb-2">Languages</h4>
@@ -33,7 +32,6 @@ export default function LGAbout() {
 					<h3 className="text-blue-700 text-xl sm:text-center mb-2">
 						Backend Developer
 					</h3>
-					<p className="sm:text-center">I like to dream up database schemas and improve performance.</p>
 				</div>
 				<div className="mb-4 text-center">
 					<h4 className="text-blue-700 mb-2">Languages</h4>

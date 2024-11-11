@@ -20,14 +20,12 @@ export default function MobileAbout() {
 						<h3 className="text-blue-700 text-xl sm:text-center mb-2">
 							Frontend Developer
 						</h3>
-						<p >I like to make complex interactions look and feel simple.</p>
 					</div>
 					<div className="mb-4">
 						<h4 className="text-blue-700 text-lg mb-2">Languages</h4>
 						<p className="whitespace-normal sm:text-center">HTML | CSS | JavaScript</p>
 					</div>
 					<div className="mb-4">
-
 						<h4 className="text-blue-700 text-lg mb-2">Tools</h4>
 						<ul className="grid grid-cols-2 gap-1">
 							<li>ReactJS</li>
@@ -51,7 +49,6 @@ export default function MobileAbout() {
 						<h3 className="text-blue-700 text-xl sm:text-center mb-2">
 							Backend Developer
 						</h3>
-						<p>I like to dream up database schemas and improve performance.</p>
 					</div>
 					<div className="mb-4">
 						<h4 className="text-blue-700 mb-2 text-lg">Languages</h4>
