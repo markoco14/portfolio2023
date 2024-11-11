@@ -30,7 +30,7 @@ export default function ESL () {
                     <div>
                         <h3 className="text-4xl mb-4">Charades</h3>                
                         <p className="border p-1 rounded-md mb-4 text-center sm:text-left">Ruby on Rails | PostgreSQL | Heroku</p>
-                        <p className="mb-4">This is a charades app that solves a problem with charades for early ESL learners - most students don't know many words. A lack of regular reading habits and restrictive curricula mean that many students just don't have the skills to explain things. With this take on Charades, there are students who guess and students who read the descriptions out loud. By giving students the descriptions, we overcome the barrier of not knowing what to say. Over time, students develop a natural muscle for using simple words to explain any concept.</p>
+                        <p className="mb-4">This is a charades app that solves a problem with charades for early ESL learners - most students don&apos;t know many words. A lack of regular reading habits and restrictive curricula mean that many students just don&apos;t know enough words to explain things. With this take on Charades, there are students who guess and students who read the descriptions out loud. By giving students the descriptions, we overcome the barrier of not knowing what to say. Over time, students develop a natural muscle for using simple words to explain any concept.</p>
                         <div className="flex gap-4">
                             <Link href="https://github.com/markoco14/rails-charades" rel="noopener noreferrer" target="_blank"
                             className="underline underline-offset-2 p-1 hover:bg-white hover:text-slate-900 active:scale-95 rounded-md">Code</Link>
@@ -54,7 +54,7 @@ export default function ESL () {
                     <div className="grow-0">
                         <h3 className="text-4xl mb-4">Present Tense Conjugation Practice</h3>
                         <p className="border p-1 rounded-md mb-4 text-center sm:text-left">FastAPI | Docker | Cloud Run</p>
-                        <p className="mb-4">This is a simple worksheet generator. You only need to refresh the page to get a new worksheet with different verbs and subjects. I haven't set up any PDF functionality, but it's on my radar. When I want to use a worksheet in my classes, I use the browser's print 'Save to PDF'. Every Monday, I make enough worksheets for the week to help my students practice.</p>
+                        <p className="mb-4">This is a simple worksheet generator. You only need to refresh the page to get a new worksheet with different verbs and subjects. I haven&apos;t set up any PDF functionality, but it&apos;s on my radar. When I want to use a worksheet in my classes, I use the browser&apos;s print &apos;Save to PDF&apos;. Every Monday, I make enough worksheets for the week to help my students practice.</p>
                         <div className="flex gap-4">
                             <Link href="https://github.com/markoco14/conjugation" rel="noopener noreferrer" target="_blank"
                             className="underline underline-offset-2 p-1 hover:bg-white hover:text-slate-900 active:scale-95 rounded-md">Code</Link>
