@@ -30,7 +30,7 @@ export default function ESL () {
                     <div>
                         <h3 className="text-4xl mb-4">Charades</h3>                
                         <p className="border p-1 rounded-md mb-4 text-center sm:text-left">Ruby on Rails | PostgreSQL | Heroku</p>
-                        <p className="mb-4">This is a charades app that I will start using with my students. Before I generate a list of words, I want to let my students come up with as many words and descriptions as they can. This version has students describing words they already know for review. I made it because I found many early ESL students are great at memorizing words, but struggle to explain them (and I think explaining is more important). It&apos;s especially true in classes with varying skill levels - some students answer everything and others shy away. With this take on Charades, there are students who guess the word and students who read the word descriptions out loud. By giving students the descriptions, we overcome the barrier of not knowing how to describe the word. Over time, students develop a natural muscle for using simple words to explain any concept.</p>
+                        <p className="mb-4">This a charades app designed to help students describe words for review. I made it because I found many early ESL students are great at memorizing words, but struggle to explain them. It&apos;s especially true in classes with varying skill levels - some students answer everything and others shy away. With this take on Charades, there are students who guess the word and students who read the word descriptions out loud. By giving students the descriptions, we overcome the barrier of not knowing how to describe the word. Over time, students develop a natural muscle for using simple words to explain any concept.</p>
                         <div className="flex gap-4">
                             <Link href="https://github.com/markoco14/rails-charades" rel="noopener noreferrer" target="_blank"
                             className="underline underline-offset-2 p-1 hover:bg-white hover:text-slate-900 active:scale-95 rounded-md">Code</Link>
@@ -54,7 +54,7 @@ export default function ESL () {
                     <div className="grow-0">
                         <h3 className="text-4xl mb-4">Present Tense Conjugation Practice</h3>
                         <p className="border p-1 rounded-md mb-4 text-center sm:text-left">FastAPI | Docker | Cloud Run</p>
-                        <p className="mb-4">This is a worksheet generator. Refresh the page to get a new worksheet with different verbs and subjects. I haven&apos;t set up any PDF functionality, but it&apos;s on my radar. When I want to use a worksheet in my classes, I use the browser&apos;s built in print &apos;Save to PDF&apos;. Every Monday, I make enough worksheets for the week to help my students practice.</p>
+                        <p className="mb-4">This is a worksheet generator. Refresh the page to get a new worksheet with different verbs and subjects. I haven&apos;t set up any PDF functionality, but it&apos;s on my radar. For now, I use the browser&apos;s built in print &apos;Save to PDF&apos; works well enough.</p>
                         <div className="flex gap-4">
                             <Link href="https://github.com/markoco14/conjugation" rel="noopener noreferrer" target="_blank"
                             className="underline underline-offset-2 p-1 hover:bg-white hover:text-slate-900 active:scale-95 rounded-md">Code</Link>
