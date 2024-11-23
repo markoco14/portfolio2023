@@ -7,12 +7,8 @@ export default function ESL () {
             id="esl"
             className="px-2 sm:px-4 py-24 min-h-screen mx-auto bg-slate-900 text-white"
             >
-            <div className="max-w-[600px] mx-auto ms:mb-24">
+            <div className="max-w-[1000px] mx-auto ms:mb-24">
                 <h2 className="text-5xl text-bold mb-4">ESL</h2>
-                <p className="mb-8">
-                    I recently decided I want to automate some tasks at my teaching job. I&apos;m making some apps to help me make materials and games for my 
-                    students. This section is dedicated to the tools that make my life easier as a teacher.
-                </p>
             </div>
             <hr className="my-8 max-w-[1000px] mx-auto"/>
             <div className="grid max-w-[1000px] mx-auto">
